@@ -1,0 +1,86 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.user {
+  align-items: flex-end;
+}
+
+.assistant {
+  align-items: flex-start;
+}
+
+.meta {
+  padding: 0 6px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.bubble {
+  position: relative;
+  max-width: min(100%, 760px);
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.user .bubble {
+  background: var(--color-user-bubble);
+  color: var(--color-user-text);
+  border-color: transparent;
+}
+
+.assistant .bubble {
+  background: var(--color-assistant-bubble);
+  color: var(--color-text);
+  padding-top: 44px;
+}
+
+.content {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.copyButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.assistant:hover .copyButton,
+.assistant:focus-within .copyButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.copyButton:hover {
+  transform: translateY(-1px);
+}
+
+@media (hover: none) {
+  .copyButton {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .bubble {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,100 @@
+.wrapper {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.actions {
+  display: flex;
+}
+
+.sendButton,
+.stopButton {
+  min-width: 136px;
+  min-height: 52px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.sendButton {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.sendButton:hover:not(:disabled),
+.stopButton:hover {
+  transform: translateY(-1px);
+}
+
+.sendButton:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stopButton {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .sendButton,
+  .stopButton {
+    width: 100%;
+  }
+
+  .textarea {
+    min-height: 112px;
+  }
+}
