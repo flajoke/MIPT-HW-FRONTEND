@@ -1,0 +1,23 @@
+.message pre {
+  padding: 12px;
+  border-radius: 12px;
+  overflow-x: auto;
+  background: #0f172a;
+}
+
+.message code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.message p {
+  margin: 0 0 12px;
+}
+
+.message p:last-child {
+  margin-bottom: 0;
+}
+
+.message ul,
+.message ol {
+  padding-left: 20px;
+}
