@@ -1,0 +1,69 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #111827;
+  background: #f3f4f6;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 16px;
+  border-right: 1px solid #d1d5db;
+  background: #fff;
+}
+
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 300px;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 520px;
+}
+
+.message--user {
+  align-self: flex-end;
+  background: #dbeafe;
+}
+
+.message--assistant {
+  align-self: flex-start;
+  background: #e5e7eb;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-item {
+  margin-right: 8px;
+}
+
+.chat-item--active {
+  font-weight: 700;
+}
